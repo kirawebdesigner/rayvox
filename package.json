@@ -1,0 +1,47 @@
+{
+    "name": "rayvox",
+    "productName": "Rayvox",
+    "version": "1.0.0",
+    "description": "Rayvox — a command launcher you can talk to (Raycast-style UX + local Whisper speech-to-text)",
+    "main": "electron/main.cjs",
+    "author": "kirawebdesigner",
+    "license": "MIT",
+    "scripts": {
+        "start": "electron .",
+        "dev": "electron . --dev",
+        "package:win": "electron-builder --win",
+        "package:mac": "electron-builder --mac",
+        "package:linux": "electron-builder --linux",
+        "package:all": "electron-builder --win --mac --linux"
+    },
+    "devDependencies": {
+        "electron": "^33.0.0",
+        "electron-builder": "^25.0.0"
+    },
+    "build": {
+        "appId": "com.kirawebdesigner.rayvox",
+        "productName": "Rayvox",
+        "files": [
+            "index.html",
+            "style.css",
+            "app.js",
+            "voice.js",
+            "recorder-worklet.js",
+            "electron/**/*"
+        ],
+        "directories": {
+            "output": "dist-desktop"
+        },
+        "mac": {
+            "category": "public.app-category.productivity",
+            "target": ["dmg", "zip"]
+        },
+        "win": {
+            "target": ["nsis", "portable"]
+        },
+        "linux": {
+            "target": ["AppImage", "deb"],
+            "category": "Utility"
+        }
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayvox — Talk to your launcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Desktop backdrop -->
+    <div class="desktop" id="desktop">
+        <div class="wallpaper-glow"></div>
+        <div class="desktop-hint">
+            <p>Press <kbd>⌘</kbd><kbd>K</kbd> or <kbd>Ctrl</kbd><kbd>K</kbd> to open · click anywhere to focus</p>
+            <p class="hint-sub">Hold <kbd>Space</kbd> to talk (Whisper runs locally in your browser)</p>
+        </div>
+    </div>
+
+    <!-- Launcher overlay -->
+    <div class="launcher-wrap hidden" id="launcherWrap">
+        <div class="launcher" id="launcher" role="dialog" aria-label="Rayvox launcher">
+            <!-- Search / input row -->
+            <div class="input-row">
+                <span class="search-icon" id="modeIcon">🔍</span>
+                <input
+                    id="searchInput"
+                    class="search-input"
+                    type="text"
+                    placeholder="Search commands, apps, or type math…"
+                    autocomplete="off"
+                    spellcheck="false"
+                    autofocus
+                >
+                <button class="mic-btn" id="micBtn" title="Hold Space to talk">
+                    <span class="mic-dot"></span>
+                    <span class="mic-label">Talk</span>
+                </button>
+            </div>
+
+            <!-- Live voice transcript bar -->
+            <div class="voice-bar hidden" id="voiceBar">
+                <div class="voice-wave" id="voiceWave">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <span class="voice-text" id="voiceText">Listening…</span>
+                <span class="voice-model" id="voiceModel"></span>
+            </div>
+
+            <!-- Results -->
+            <ul class="results" id="results" role="listbox"></ul>
+
+            <!-- Footer / keyboard hints -->
+            <div class="footer">
+                <span class="footer-hint"><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+                <span class="footer-hint"><kbd>↵</kbd> run</span>
+                <span class="footer-hint"><kbd>esc</kbd> close</span>
+                <span class="footer-hint"><kbd>space</kbd> hold to talk</span>
+                <span class="footer-spacer"></span>
+                <span class="footer-brand">Rayvox · Whisper ⚡ local</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Command detail panel (for notes, clipboard etc.) -->
+    <div class="detail-wrap hidden" id="detailWrap">
+        <div class="detail" id="detail">
+            <div class="detail-header">
+                <span id="detailTitle">Detail</span>
+                <button class="detail-close" id="detailClose">✕</button>
+            </div>
+            <div class="detail-body" id="detailBody"></div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
