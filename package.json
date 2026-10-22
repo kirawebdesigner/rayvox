@@ -1,8 +1,8 @@
 {
     "name": "rayvox",
     "productName": "Rayvox",
-    "version": "1.0.0",
-    "description": "Rayvox — a command launcher you can talk to (Raycast-style UX + local Whisper speech-to-text)",
+  "version": "2.0.0",
+  "description": "Rayvox 2 — Raycast-parity command launcher rebuilt from REA static analysis of Raycast v1.104.32, with local Whisper dictation and BYO AI providers.",
     "main": "electron/main.cjs",
     "author": "kirawebdesigner",
     "license": "MIT",
